@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{29229A87-B6E1-2A89-445C-9F6705C17458}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Puzzle/Scripts/PuzzelScript.cs">
+    <Files>
+      <File FileName="Assets/MusicManager.cs" Line="20" Column="1" />
+      <File FileName="Assets/Puzzle/Scripts/PuzzlePlaceScript.cs" Line="131" Column="22" />
+      <File FileName="Assets/Puzzle/Scripts/GameManager.cs" Line="73" Column="39" />
+      <File FileName="Assets/Puzzle/Scripts/PuzzelScript.cs" Line="70" Column="40" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
