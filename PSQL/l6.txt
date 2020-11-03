@@ -1,0 +1,46 @@
+--25, SP-GiST, text_ops, =   --Dominik Hawryluk 299701
+
+--SP-GiST (space partitioned GiST) używa się do indeksowania dużych, niezbalansowanych struktur (np. drzewa czwórkowe, kd, sufiksowe). Idea polega na ciągłym dzieleniu naszych wartości na kolejne rozłączne części. Ułatwia to wstawiwanie i wyszukiwanie elementów, jeśli zapytania są zgodne z przyjętą regułą podziału.
+--Text_Ops służą jak nazwa wskazuje, do porównywania dwóch ciągów znaków.
+--Operator = stwierdza, czy dany tekst jest dokładnie taki sam jak argument. Nie ma tym przypadku porównywania do wzorca jak przy LIKE.
+
+
+
+
+DROP TABLE random_text;
+CREATE TABLE random_text(names text, value numeric);
+INSERT INTO random_text(names, value)
+SELECT md5(random()::text),
+	random()::numeric
+FROM generate_series(1,100000) AS n;
+
+INSERT INTO random_text(names, value)
+SELECT 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+	random()::numeric * 21
+FROM generate_series(1,10) AS n;
+	
+INSERT INTO random_text(names, value)
+SELECT '1234567890123456789012345679012',
+	random()::numeric * 10000
+FROM generate_series(1,100) AS n;
+
+
+EXPLAIN ANALYZE SELECT * FROM random_text where names = '1234567890123456789012345679012';
+--0.082ms
+--15.845ms
+
+EXPLAIN ANALYZE SELECT * FROM random_text where names = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
+--0.053ms
+--13.351ms
+
+CREATE INDEX ON random_text USING SPGIST(names);
+
+EXPLAIN ANALYZE SELECT * FROM random_text where names = '1234567890123456789012345679012';
+--0.191ms
+--0.099ms
+
+EXPLAIN ANALYZE SELECT * FROM random_text where names = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
+--0.080ms
+--0.065ms
+
+--Jak widzimy, mamy nawet 16'krotnie szybsze wywołania z użyciem indeksu, dzięki któremu szybko możemy dojść, w drzewie prefiksowym, do naszych szukanych wartości. Drzewo jest prawdopodobnie bardzo niezbalansowane, bo najwięcej wartości skrywa '1234...'.
