@@ -1,0 +1,53 @@
+<!-- views/index.ejs -->
+<!DOCTYPEhtml>
+<htmllang="en">
+<head>
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	  <FORM METHOD="POST" ACTION="">
+		<TABLE BORDER="1">
+		  <TR>
+			<TD>Imie</TD>
+			<TD>
+			  <INPUT TYPE="text" NAME="username" value='<%= username%>' SIZE="20">
+			</TD>
+		  </TR>
+		  <TR>
+			<TD>Nazwisko</TD>
+			<TD><INPUT TYPE="text" NAME="surname" value='<%= surname%>' SIZE="20"></TD>
+		  </TR>
+		  <TR>
+			<TD>Przedmiot</TD>
+			<TD><INPUT TYPE="text" NAME="subject" value='<%= subject%>' SIZE="20"></TD>
+		  </TR>
+	</TABLE>
+	<table>
+		<TABLE BORDER="1">
+		  <tr>
+			  <% for(var i = 1; i < 11; i++){ %>
+					<td>
+						Z<%= i%>
+					</td>
+			  <%}%>
+		  </tr>
+		  <tr>
+			<% for(var i = 1; i < 11; i++){ %>
+				<td>
+					<input type="text" name=<%= "z" + i%> size="1">
+				</td>
+		  <%}%>
+		  </tr>
+		</TABLE>
+		<P><INPUT TYPE="submit" VALUE="Drukuj" NAME="B1"></P>
+		</FORM>
+		<% if (locals.err) { %>
+			<div>
+				<%= err%>
+			</div>	
+		<% } %>
+</body>
+</html>

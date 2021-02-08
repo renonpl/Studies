@@ -1,0 +1,38 @@
+p { color: blue; }
+div {
+	width: 600px;
+	color: red;
+	border: 15px solid blue;
+	padding: 20px;
+	margin: 5px;
+	padding-bottom:100px;
+	}
+
+	.relativediv{
+	position:relative;
+	border: 10px solid green;
+	width: 400px;
+	left:20px;
+	top:10px;
+	}
+		
+
+	.relativediv>img{
+	position:absolute;
+	margin: 0px;
+	left : 200px;
+	padding: 0px;
+	width: 100px;
+	border: 15px solid black;
+	}
+	
+	.relativediv>span{
+	position:absolute;
+	top: 80px;
+	left : 20px;
+	padding: 0px;
+	border: 10px solid yellow;
+	}
+
+
+	

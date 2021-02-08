@@ -1,0 +1,33 @@
+02:49:12 127.0.0.1 GET / 200
+02:49:35 127.0.0.1 GET /index.html 200
+03:01:06 157.7.2.1 GET /images/sponsered.gif 304
+03:52:36 192.62.4.3 GET /search.php 200
+04:17:03 127.0.0.1 GET /admin/style.css 200
+05:04:54 192.62.4.3GET /favicon.ico 404
+05:38:07 127.0.0.1 GET /js/ads.js 20002:49:12 127.0.0.1 GET / 200
+02:49:35 127.0.0.1 GET /index.html 200
+03:01:06 192.62.4.3 GET /images/sponsered.gif 304
+03:52:36 192.62.4.3 GET /search.php 200
+04:17:03 127.0.0.1 GET /admin/style.css 200
+05:04:54 192.62.4.3 GET /favicon.ico 404
+05:38:07 154.61.6.2 GET /js/ads.js 200
+05:04:54 192.62.4.3 GET /favicon.ico 404
+05:38:07 154.61.6.2 GET /js/ads.js 200
+05:04:54 192.62.4.3 GET /favicon.ico 404
+05:38:07 154.61.6.2 GET /js/ads.js 200
+05:04:54 192.62.4.3 GET /favicon.ico 404
+05:38:07 154.61.6.2 GET /js/ads.js 200
+03:01:06 157.7.2.1 GET /images/sponsered.gif 300
+03:01:06 157.7.2.1 GET /images/sponsered.gif 3031
+03:01:06 157.7.2.1 GET /images/sponsered.gif 0
+03:01:06 157.7.2.1 GET /images/sponsered.gif 0
+03:01:06 157.7.2.1 GET /images/sponsered.gif 0
+03:01:06 152.7.4.5 GET /images/sponsered.gif 304
+03:01:06 152.7.4.5 GET /images/sponsered.gif 304
+03:01:06 152.7.4.5 GET /images/sponsered.gif 304
+03:01:06 152.7.4.5 GET /images/sponsered.gif 304
+03:01:06 152.7.4.5 GET /images/sponsered.gif 304
+03:01:06 152.7.4.5 GET /images/sponsered.gif 304
+03:01:06 152.7.4.5 GET /images/sponsered.gif 304
+03:01:06 152.7.4.5 GET /images/sponsered.gif 304
+03:01:06 152.7.4.5 GET /images/sponsered.gif 304

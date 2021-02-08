@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+	<head>
+		<title>Testowa stronka</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style1.css">	
+		<script src="jquery-3.1.1.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			function getRandomInt(max) {
+			  max = Math.floor(max);
+			  return Math.floor(Math.random() * max);
+			}
+
+			var tab = {
+				adverb: ['appropriately', 'assertively','authoritatively','collaboratively','compellingly','competently',
+				'completely','continually','conveniently','credibly','distinctively','dramatically', 'dynamically', 'efficiently'],
+				verb: ['actualize','administrate','aggregate','architect','benchmark','brand',
+				'build','cloudify','communicate','conceptualize','coordinate',
+				'create','cultivate','customize','deliver','deploy','develop','dinintermediate disseminate',
+				'drive','embrace','e-enable','empower','enable','engage','engineer','enhance'],
+				adjectives: [
+				'24/7','24/365','accurate','adaptive',
+				'agile','alternative','an expanded array of','B2B','B2C','backend','backward-compatible',
+				'best-of-breed','bleeding-edge','bricks-and-clicks','business','clicks-and-mortar','client-based',
+				'client-centered','client-centric','client-focused','cloud-based','cloud-centric','cloudified','collaborative',
+				'compelling','competitive','cooperative','corporate','cost effective','covalent','cross functional',
+				'cross-media','cross-platform','cross-unit'],
+				nouns: [
+				'action items','adoption','alignments','applications','architectures','bandwidth',
+				'benefits','best practices','catalysts for change','channels','clouds',
+				'collaboration and idea-sharing','communities','content','convergence','core competencies',
+				'customer service','data','deliverables','e-business','e-commerce','e-markets',
+				'e-tailers','e-services','experiences','expertise','functionalities',
+				'fungibility','growth strategies','human capital','ideas','imperatives']
+				
+				};
+				
+		
+			$("button[name='generator']").click(function(){
+				var $p = $("p[name='res']")
+				$p.text("");
+				$p.append(tab.adverb[getRandomInt(tab.adverb.length)]);
+				$p.append(" ");
+				$p.append(tab.verb[getRandomInt(tab.verb.length)]);
+				$p.append(" ");
+				$p.append(tab.adjectives[getRandomInt(tab.adjectives.length)]);
+				$p.append(" ");
+				$p.append(tab.nouns[getRandomInt(tab.nouns.length)]);
+			});
+			
+			function addToArr(listid, text){
+				$(listid).append('<li>' + text + '</li>');
+			}		
+			
+			for (var t of tab.adverb){
+				addToArr("#adv",t);
+			}
+			for (var t of tab.verb){
+				addToArr("#verb",t);
+			}
+			for (var t of tab.adjectives){
+				addToArr("#adj",t);
+			}
+			for (var t of tab.nouns){
+				addToArr("#nouns",t);
+			}
+		 });
+		</script>
+				
+	</head>
+	<body>
+		 <button type="button" name="generator">Generate!</button>
+		 <p name="res"></p>
+		<table>
+			<tr>
+				<td>Adverb</td>
+				<td>Verb</td>
+				<td>Adjectievs</td>
+				<td>Nouns</td>
+			</tr>
+			<tr>
+				<td>
+					<ul id="adv">
+					</ul>
+				</td>
+				<td>
+					<ul id="verb">
+					</ul>
+				</td>
+				<td>
+					<ul id="adj">
+					</ul>
+				</td>
+				<td>
+					<ul id="nouns">
+					</ul>
+				</td>
+			</tr>
+		</table>
+		 
+	</body>
+	
+
+</html>

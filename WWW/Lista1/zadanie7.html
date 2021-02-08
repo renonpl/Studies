@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+	<head>
+		<title>Zad7</title>
+		<meta charset="utf-8">
+			<style>
+			*{ font-family: Arial, sans-serif; font-size: 10pt; }
+			input {margin-bottom:15px;}
+			</style>
+	</head>
+	<body>
+		<form name="Przelew">
+		<fieldset>
+		<legend>Dane do przelewu</legend>
+			<label for="firstname"> Imie: </label> 
+			<input type="text" required id="firstname" name="firstname" placeholder="Jan"> <br>
+			
+			<label for="lastname"> Nazwisko:   </label>
+			<input type="text" required id="lastname" name="lastname" placeholder="Kowalski"> <br>
+			
+			<label for="email"> Adres email:  </label>
+			<input type="email" name="email" id="email" placeholder="exa@mple.com"> <br>
+			
+			<label for="amount"> Kwota przelewu [zł]:  </label>
+			<input type="number" required id="amount" name="amount" min="1" max="1000000" value="100">
+			<label for="date"> Data przelewu:  </label>
+			<input type="date" id="date" name="date"> <br>
+			
+			<label for="anumber"> NR konta:  </label>
+			<input type="number" required id="anumber" name="anumber" min="1"> <br>
+			
+			<label for="street"> Ulica:  </label>
+			<input type="email" id="street" name="street"> 
+			<label for="snumber"> Nr domu: </label> 
+			<input type="number" id="snumber" name="snumber"> <br>
+			
+			<label for="postcode1"> Kod pocztowy:  </label>
+			<input type="number" id="postcode1" name="postcode1" min="1" max="99"> - <input type="number" name="postcode2" min="1" max="999">
+			
+			<label for="city"> Miasto:  </label><select id="city" name="city">
+									<option value="0">Wrocław</option>
+									<option value="1">Warszawa</option>
+									<option value="2">Łódź</option>
+									<option value="3">Gdańsk</option>
+								</select>
+								
+			<input type="submit" value ="Wyslij">
+		</fieldset>
+		</form>
+	</body>
+	
+
+</html>

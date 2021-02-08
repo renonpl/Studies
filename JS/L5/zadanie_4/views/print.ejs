@@ -1,0 +1,45 @@
+<!-- views/index.ejs -->
+<!DOCTYPEhtml>
+<htmllang="en">
+<head>
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<table>
+		<TABLE BORDER="1">
+			<tr>
+				<td colspan="3">
+					<%= username%>
+				</td>
+				<td colspan="3">
+					<%= surname%>
+				</td>
+				<td colspan="4">
+					<%= subject%>
+				</td>
+			</tr>
+		  <tr>
+			  <% for(var i = 1; i < 11; i++){ %>
+					<td>
+						Z<%= i%>
+					</td>
+			  <%}%>
+		  </tr>
+		  <tr>
+			<td><%= z1%></td>
+			<td><%= z2%></td>
+			<td><%= z3%></td>
+			<td><%= z4%></td>
+			<td><%= z5%></td>
+			<td><%= z6%></td>
+			<td><%= z7%></td>
+			<td><%= z8%></td>
+			<td><%= z9%></td>
+			<td><%= z10%></td>
+		  </tr>
+		</TABLE>
+</body>
+</html>

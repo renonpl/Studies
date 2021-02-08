@@ -1,0 +1,47 @@
+p { color: blue; }
+div {
+	color: red;
+	border: 15px solid blue;
+	padding: 20px;
+	margin: 5px;
+	}
+
+
+	#staticdiv{
+	position:static;
+		left:20px;
+		top: 100px; /*te nie działaja bo static*/
+	color: blue;
+	border: 3px solid green;
+	}
+	
+	
+	#relativediv{
+	position:relative;
+	left:20px;
+	top:50px;
+	}
+	
+	#fixeddiv{
+	position:fixed;
+	right:20px;
+	top:50px;
+	}
+	
+	.absolutediv{
+	position:absolute;
+	top: 400px;
+	left: 50px;
+	width: 100px;
+	border: 15px solid black;
+	}
+	
+	
+	#longdiv{
+	position: static;
+	height: 1024px;
+	width: 1024px;
+	}
+	
+
+	

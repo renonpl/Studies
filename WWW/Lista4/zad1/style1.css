@@ -1,0 +1,9 @@
+@import url("style2.css");
+
+p { color: red ; }
+
+div>p{color: purple;}
+
+span{
+	background-color:yellow;
+}

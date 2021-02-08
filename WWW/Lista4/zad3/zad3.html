@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+	<head>
+		<title>Testowa stronka</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style1.css">	
+		<script src="jquery-3.1.1.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			$(".small_div").each(function(){
+				$(this).children().first().click(function(){
+					var $parent = $(this).parent();
+					if($parent.data("marked")){
+						$parent.css("border","5px solid black");
+						$parent.data("marked",false);
+					}
+					else{
+						$parent.css("border","5px solid red");
+						$parent.data("marked",true);
+					}
+				});
+			});
+			$("button[name='selectall']").click(function(){
+				$(".small_div").each(function(){
+					if(!$(this).data("marked")){
+						$(this).children().first().click();
+					}
+					});
+			});
+			$("button[name='unselect']").click(function(){
+				$(".small_div").each(function(){
+					if($(this).data("marked")){
+						$(this).children().first().click();
+					}
+				});
+			});
+			$("button[name='print']").click(function(){
+				$("p[name='log']").text("");
+				$(".small_div").each(function(){
+					if($(this).data("marked")){
+						$(this).children().eq(1).text($(this).children().first().attr("alt"));
+						$("p[name='log']").append($(this).children().first().attr("alt"));
+						$("p[name='log']").append(" ");
+					}
+					if(!$(this).data("marked")){
+						$(this).children().eq(1).text("");
+					}
+				});
+			});
+			
+			
+			return false;
+		 });
+		</script>
+				
+	</head>
+	<body>
+		<div id="big_div">
+			<div class="small_div">
+				<img src="insignia.jfif" alt="Insignia">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="astra.jpg" alt="Astra">
+				<p></p>
+			</div class="small_div">
+			<div class="small_div">
+				<img src="corsa.jpg" alt="Corsa">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="500.jpg" alt="500">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="panda.jfif" alt="Panda">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="fiesta.jfif" alt="Fiesta">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="focus.jpg" alt="Focus">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="yaris.jpg" alt="Yaris">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="corolla.jfif" alt="Corolla">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="mustang.jpg" alt="Mustang">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="clio.jfif" alt="Clio">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="megane.jpg" alt="Megane">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="scenic.jpg" alt="Scenic">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="corsa.jpg" alt="Corsa">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="corsa.jpg" alt="Corsa">
+				<p></p>
+			</div>
+			<div class="small_div">
+				<img src="corsa.jpg" alt="Corsa">
+				<p></p>
+			</div>
+			
+		</div>
+		 <button type="button" name="selectall">Zaznacz</button>
+		 <button type="button" name="unselect">Odznacz</button> 		 
+		 <button type="button" name="print">Wypisz</button>
+		 <p name="log"></p>
+	</body>
+	
+
+</html>
